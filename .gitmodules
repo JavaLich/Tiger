@@ -1,0 +1,3 @@
+[submodule "Tiger\\vendor\\spdlog"]
+	path = Tiger\\vendor\\spdlog
+	url = https://github.com/gabime/spdlog

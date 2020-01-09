@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+
 class GameApp : public Tiger::Application {
 public:
 	GameApp() {
