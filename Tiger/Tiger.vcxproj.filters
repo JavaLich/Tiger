@@ -4,6 +4,9 @@
     <Filter Include="Tiger">
       <UniqueIdentifier>{E0612A0E-4C76-52BF-15F8-F51E81CB4EF0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tiger\Events">
+      <UniqueIdentifier>{C431A3B1-B094-3256-591A-6B0C455CFED8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Tiger.h" />
@@ -16,7 +19,16 @@
     <ClInclude Include="src\Tiger\EntryPoint.h">
       <Filter>Tiger</Filter>
     </ClInclude>
+    <ClInclude Include="src\Tiger\Events\Event.h">
+      <Filter>Tiger\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tiger\Events\MouseEvent.h">
+      <Filter>Tiger\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Tiger\Log.h">
+      <Filter>Tiger</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tiger\MessageBus.h">
       <Filter>Tiger</Filter>
     </ClInclude>
   </ItemGroup>
@@ -24,7 +36,16 @@
     <ClCompile Include="src\Tiger\Application.cpp">
       <Filter>Tiger</Filter>
     </ClCompile>
+    <ClCompile Include="src\Tiger\Events\Event.cpp">
+      <Filter>Tiger\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tiger\Events\MouseEvent.cpp">
+      <Filter>Tiger\Events</Filter>
+    </ClCompile>
     <ClCompile Include="src\Tiger\Log.cpp">
+      <Filter>Tiger</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tiger\MessageBus.cpp">
       <Filter>Tiger</Filter>
     </ClCompile>
   </ItemGroup>

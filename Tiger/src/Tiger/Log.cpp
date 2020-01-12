@@ -8,7 +8,6 @@ namespace Tiger {
 	std::shared_ptr<spdlog::logger> Log::clientLogger;
 
 
-
 	Log::Log()
 	{
 	}

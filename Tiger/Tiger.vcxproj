@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>TG_PLATFORM_WINDOWS;TG_BUILD_DLL;TG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -99,7 +99,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>TG_PLATFORM_WINDOWS;TG_BUILD_DLL;TG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -123,7 +123,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>TG_PLATFORM_WINDOWS;TG_BUILD_DLL;TG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -147,11 +147,17 @@
     <ClInclude Include="src\Tiger\Application.h" />
     <ClInclude Include="src\Tiger\Core.h" />
     <ClInclude Include="src\Tiger\EntryPoint.h" />
+    <ClInclude Include="src\Tiger\Events\Event.h" />
+    <ClInclude Include="src\Tiger\Events\MouseEvent.h" />
     <ClInclude Include="src\Tiger\Log.h" />
+    <ClInclude Include="src\Tiger\MessageBus.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Tiger\Application.cpp" />
+    <ClCompile Include="src\Tiger\Events\Event.cpp" />
+    <ClCompile Include="src\Tiger\Events\MouseEvent.cpp" />
     <ClCompile Include="src\Tiger\Log.cpp" />
+    <ClCompile Include="src\Tiger\MessageBus.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -10,3 +10,7 @@
 	#endif
 #else #error Tiger only supports windows
 #endif
+
+#define BIT(x) 1 << x
+
+#define FMT_DEPRECATED
