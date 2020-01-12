@@ -13,4 +13,3 @@
 
 #define BIT(x) 1 << x
 
-#define FMT_DEPRECATED

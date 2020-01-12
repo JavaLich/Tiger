@@ -2,8 +2,6 @@
 
 namespace Tiger {
 
-	Tiger::MouseEvent::~MouseEvent() {
-
-	}
+	Tiger::MouseEvent::~MouseEvent() {}
 
 }

@@ -19,7 +19,6 @@ namespace Tiger {
 
 	private:
 		//Lists for each type of event 
-		static std::vector<Event> mouseEvents;
 
 	};
 

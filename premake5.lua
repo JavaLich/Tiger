@@ -1,5 +1,6 @@
 workspace "Tiger"
 	architecture "x64"
+	staticruntime "on"
 
 	configurations
 	{
@@ -12,8 +13,9 @@ workspace "Tiger"
 
 	project "Tiger"
 		location "Tiger"
-		kind "SharedLib"
+		kind "StaticLib"
 		language "C++"
+		cppdialect "c++17"
 
 		targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 		objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -29,30 +31,25 @@ workspace "Tiger"
 		}
 
 		filter "system:windows"
-			cppdialect "c++17"
-			staticruntime "On"
 			systemversion "latest"
 
 			defines{
 				"TG_PLATFORM_WINDOWS",
+				"TG_STATIC",
 				"TG_BUILD_DLL"
-			}
-
-			postbuildcommands{
-				("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Game")
 			}
 		
 		filter "configurations:Debug"
 			defines "TG_DEBUG"
-			symbols "On"
+			symbols "on"
 		
 		filter "configurations:Release"
 			defines "TG_RELEASE"
-			optimize "On"
+			optimize "on"
 		
 		filter "configurations:Dist"
 			defines "TG_DEBUG"
-			optimize "On"
+			optimize "on"
 		
 project "Game"
 	location "Game"
@@ -75,22 +72,21 @@ project "Game"
 	links "Tiger"
 
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines{
-			"TG_PLATFORM_WINDOWS"
+			"TG_PLATFORM_WINDOWS",
+			"TG_STATIC"
 		}
 		
 	filter "configurations:Debug"
 		defines "TG_DEBUG"
-		symbols "On"
+		symbols "on"
 		
 	filter "configurations:Release"
 		defines "TG_RELEASE"
-		optimize "On"
+		optimize "on"
 		
 	filter "configurations:Dist"
 		defines "TG_DEBUG"
-		optimize "On"
+		optimize "on"
