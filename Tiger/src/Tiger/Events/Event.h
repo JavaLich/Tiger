@@ -3,8 +3,6 @@
 #include "Tiger/Core.h"
 #include "Tiger/Log.h"
 
-#include <functional>
-
 #define EVENT_TYPE(x) virtual int getType() const override { return x; } \
 static int getStaticType() { return x; }
 

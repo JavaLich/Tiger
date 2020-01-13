@@ -28,25 +28,15 @@
     <ClInclude Include="src\Tiger\Log.h">
       <Filter>Tiger</Filter>
     </ClInclude>
-    <ClInclude Include="src\Tiger\MessageBus.h">
-      <Filter>Tiger</Filter>
-    </ClInclude>
+    <ClInclude Include="src\tgpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Tiger\Application.cpp">
       <Filter>Tiger</Filter>
     </ClCompile>
-    <ClCompile Include="src\Tiger\Events\Event.cpp">
-      <Filter>Tiger\Events</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tiger\Events\MouseEvent.cpp">
-      <Filter>Tiger\Events</Filter>
-    </ClCompile>
     <ClCompile Include="src\Tiger\Log.cpp">
       <Filter>Tiger</Filter>
     </ClCompile>
-    <ClCompile Include="src\Tiger\MessageBus.cpp">
-      <Filter>Tiger</Filter>
-    </ClCompile>
+    <ClCompile Include="src\tgpch.cpp" />
   </ItemGroup>
 </Project>

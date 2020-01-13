@@ -17,6 +17,11 @@ workspace "Tiger"
 		language "C++"
 		cppdialect "c++17"
 
+		pchheader "tgpch.h"
+		pchsource "%{prj.name}/src/tgpch.cpp"
+
+		forceincludes "tgpch.h"
+
 		targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 		objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 

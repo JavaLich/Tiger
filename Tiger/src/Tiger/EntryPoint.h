@@ -9,8 +9,9 @@ extern Tiger::Application* Tiger::createApplication();
 
 int main(int argc, char** argv) {
 	Tiger::Log::init();
-	TG_INFO("Logger initialized");
+	TG_INFO("Tiger initialized");
 	auto app = Tiger::createApplication();
+	APP_INFO("App initialized");
 	app->run();
 	delete app;
 	return 0;
