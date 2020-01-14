@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Tiger/Core.h"
-#include "Tiger/Log.h"
 
 #define EVENT_TYPE(x) virtual int getType() const override { return x; } \
 static int getStaticType() { return x; }
@@ -19,19 +18,25 @@ namespace Tiger {
 	};
 	
 	enum class EventID {
-		EVENT_MOUSE_MOVED
+		EVENT_MOUSE_MOVED,
+		EVENT_MOUSE_PRESSED,
+		EVENT_MOUSE_RELEASED,
+		EVENT_KEY_PRESSED,
+		EVENT_KEY_RELEASED,
+		EVENT_WINDOW_RESIZED,
+		EVENT_WINDOW_CLOSED
 	};
 	
 	
 	class TIGER_API Event
 	{
 	public:
-		Event();
-		~Event();
+		Event() {}
+		~Event() {}
 		virtual int getType() const = 0;
 		virtual EventID getID() const = 0;	
+		virtual std::string toString() const = 0;
 		bool handled = false;
-
 	};
 
 	class TIGER_API Dispatcher {
@@ -50,5 +55,7 @@ namespace Tiger {
 		Event& event;
 	};
 
-
+	inline std::ostream & operator<<(std::ostream& str, Event const& v) {
+		return str << v.toString();
+	}
 }

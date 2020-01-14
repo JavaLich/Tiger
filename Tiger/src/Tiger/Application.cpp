@@ -1,4 +1,6 @@
 #include "Application.h"
+#include "GLFW/glfw3.h"
+
 
 namespace Tiger {
 	Application::Application()
@@ -11,8 +13,7 @@ namespace Tiger {
 
 	void Application::run()
 	{
-		while (true) {
-		}
+		while (true) {}
 	}
 
 	void Application::onEvent(Event& event)

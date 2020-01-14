@@ -19,7 +19,13 @@
     <ClInclude Include="src\Tiger\EntryPoint.h">
       <Filter>Tiger</Filter>
     </ClInclude>
+    <ClInclude Include="src\Tiger\Events\AppEvent.h">
+      <Filter>Tiger\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Tiger\Events\Event.h">
+      <Filter>Tiger\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tiger\Events\KeyEvent.h">
       <Filter>Tiger\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Tiger\Events\MouseEvent.h">
