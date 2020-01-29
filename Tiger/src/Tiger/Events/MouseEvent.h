@@ -10,22 +10,22 @@ namespace Tiger {
 	{
 	public:
 		MouseEvent(double x, double y) : x(x), y(y) {}
-		virtual ~MouseEvent() {}
-		double getX() const { return x; }
-		double getY() const { return y; }
+		~MouseEvent() = default;
+		inline double getX() const { return x; }
+		inline double getY() const { return y; }
 
 		EVENT_TYPE(EVENT_TYPE_MOUSE);
 		EVENT_ID(EventID::EVENT_MOUSE_MOVED);
 		virtual std::string toString() const { return "MouseEvent: (" + std::to_string(x) + ", " + std::to_string(y) + ")"; }
 	private:
-		int x, y;
+		double x, y;
 	};
 
 	class TIGER_API MouseMovedEvent : public Tiger::MouseEvent
 	{
 	public:
 		MouseMovedEvent(double x, double y) : MouseEvent(x, y) {}
-		virtual ~MouseMovedEvent() {}
+		~MouseMovedEvent() = default;
 
 		EVENT_TYPE(EVENT_TYPE_MOUSE);
 		EVENT_ID(EventID::EVENT_MOUSE_MOVED);
@@ -36,9 +36,9 @@ namespace Tiger {
 	{
 	public:
 		MousePressedEvent(double x, double y, int button) : MouseEvent(x, y), button(button) {}
-		virtual ~MousePressedEvent() {}
+		~MousePressedEvent() = default;
 
-		int getButton() const { return button; }
+		inline int getButton() const { return button; }
 
 		EVENT_TYPE(EVENT_TYPE_MOUSE);
 		EVENT_ID(EventID::EVENT_MOUSE_PRESSED);
@@ -51,9 +51,9 @@ namespace Tiger {
 	{
 	public:
 		MouseReleasedEvent(double x, double y, int button) : MouseEvent(x, y), button(button) {}
-		virtual ~MouseReleasedEvent() {}
+		~MouseReleasedEvent() = default;
 
-		int getButton() const { return button; }
+		inline int getButton() const { return button; }
 
 		EVENT_TYPE(EVENT_TYPE_MOUSE);
 		EVENT_ID(EventID::EVENT_MOUSE_RELEASED);

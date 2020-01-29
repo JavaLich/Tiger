@@ -31,8 +31,8 @@ namespace Tiger {
 	class TIGER_API Event
 	{
 	public:
-		Event() {}
-		~Event() {}
+		Event() = default;
+		~Event() = default;
 		virtual int getType() const = 0;
 		virtual EventID getID() const = 0;	
 		virtual std::string toString() const = 0;

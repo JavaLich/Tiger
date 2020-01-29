@@ -35,6 +35,8 @@
       <Filter>Tiger</Filter>
     </ClInclude>
     <ClInclude Include="src\tgpch.h" />
+    <ClInclude Include="src\Tiger\Window.h" />
+    <ClInclude Include="src\Tiger\Platform\Windows\WinWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Tiger\Application.cpp">
@@ -44,5 +46,7 @@
       <Filter>Tiger</Filter>
     </ClCompile>
     <ClCompile Include="src\tgpch.cpp" />
+    <ClCompile Include="src\Tiger\Window.cpp" />
+    <ClCompile Include="src\Tiger\Platform\Windows\WinWindow.cpp" />
   </ItemGroup>
 </Project>

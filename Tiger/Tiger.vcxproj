@@ -144,6 +144,8 @@
     <ClInclude Include="src\Tiger\Events\MouseEvent.h" />
     <ClInclude Include="src\Tiger\Log.h" />
     <ClInclude Include="src\tgpch.h" />
+    <ClInclude Include="src\Tiger\Platform\Windows\WinWindow.h" />
+    <ClInclude Include="src\Tiger\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Tiger\Application.cpp" />
@@ -151,6 +153,8 @@
     <ClCompile Include="src\tgpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Tiger\Platform\Windows\WinWindow.cpp" />
+    <ClCompile Include="src\Tiger\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

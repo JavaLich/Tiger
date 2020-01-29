@@ -9,11 +9,11 @@ namespace Tiger {
 	class TIGER_API WindowResizedEvent : public Tiger::Event {
 	public:
 		WindowResizedEvent(int width, int height) : width(width), height(height) {}
-		~WindowResizedEvent() {}
+		~WindowResizedEvent() = default;
 		
-		int getWidth() const { return width; }
-		int getHeight() const { return height; }
-		virtual std::string toString() const override { return "WindowResizedEvent: (" + std::to_string(width) + ", " + std::to_string(height) + ")"; }
+		inline int getWidth() const { return width; }
+		inline int getHeight() const { return height; }
+		inline virtual std::string toString() const override { return "WindowResizedEvent: (" + std::to_string(width) + ", " + std::to_string(height) + ")"; }
 		EVENT_TYPE(EVENT_TYPE_WINDOW)
 		EVENT_ID(EventID::EVENT_WINDOW_RESIZED)
 	private:
@@ -22,10 +22,10 @@ namespace Tiger {
 
 	class TIGER_API WindowCloseEvent : public Tiger::Event {
 	public:
-		WindowCloseEvent() {}
-		~WindowCloseEvent() {}
+		WindowCloseEvent() = default;
+		~WindowCloseEvent() = default;
 
-		virtual std::string toString() const override { return "WindowCloseEvent"; }
+		inline virtual std::string toString() const override { return "WindowCloseEvent"; }
 		EVENT_TYPE(EVENT_TYPE_WINDOW)
 		EVENT_ID(EventID::EVENT_WINDOW_CLOSED)
 	};
