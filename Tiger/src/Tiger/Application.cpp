@@ -1,6 +1,8 @@
 #include "Application.h"
 
 #include "glad/glad.h"
+
+#include "imgui.h"
 namespace Tiger {
 
 	Application* Application::instance = nullptr;
@@ -23,8 +25,9 @@ namespace Tiger {
 
 	void Application::run()
 	{
+		float* color = new float[4];
 		while (running) {
-			glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
+			glClearColor(color[0], color[1], color[2], color[3]);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 			for (Layer* layer : stack) {
@@ -35,6 +38,9 @@ namespace Tiger {
 			for (Layer* layer : stack) {
 				layer->onDebugGUIRender();
 			}
+			ImGui::Begin("Background");
+			ImGui::ColorPicker4("Background Color", color);
+			ImGui::End();
 			guiLayer->endRender();
 			
 			window->onUpdate();
