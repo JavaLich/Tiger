@@ -13,6 +13,8 @@ workspace "Tiger"
 	outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 	include "Tiger/vendor/GLFW"
+	include "Tiger/vendor/imgui"
+	include "Tiger/vendor/glad"
 
 	project "Tiger"
 		location "Tiger"
@@ -33,19 +35,25 @@ workspace "Tiger"
 		}
 
 		includedirs{
+			"%{prj.name}/vendor/imgui",
 			"%{prj.name}/vendor/spdlog/include",
 			"%{prj.name}/vendor/GLFW/include",
+			"%{prj.name}/vendor/glad/include",
 			"%{prj.name}/src"
 		}
 
 		links "GLFW"
+		links "imgui"
+		links "Glad"
 
 		filter "system:windows"
 			systemversion "latest"
 
 		defines{
 			"TG_PLATFORM_WINDOWS",
-			"TG_STATIC"
+			"TG_STATIC",
+			"_CRT_NONSTDC_NO_DEPRECATE",
+			"_CRT_SECURE_NO_DEPRECATE"
 		}
 		
 		filter "configurations:Debug"

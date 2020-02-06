@@ -7,6 +7,15 @@
     <Filter Include="Tiger\Events">
       <UniqueIdentifier>{C431A3B1-B094-3256-591A-6B0C455CFED8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tiger\ImGUI">
+      <UniqueIdentifier>{CABAAC24-3670-251A-BF64-1FF12B191C1E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tiger\Platform">
+      <UniqueIdentifier>{34BA54C3-2088-48C9-091C-B9EFF588242E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tiger\Platform\Windows">
+      <UniqueIdentifier>{6E58C370-5A52-ECC2-43BF-82D32F58522F}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Tiger.h" />
@@ -34,19 +43,35 @@
     <ClInclude Include="src\Tiger\Log.h">
       <Filter>Tiger</Filter>
     </ClInclude>
+    <ClInclude Include="src\Tiger\Platform\Windows\WinWindow.h">
+      <Filter>Tiger\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tiger\Window.h">
+      <Filter>Tiger</Filter>
+    </ClInclude>
     <ClInclude Include="src\tgpch.h" />
-    <ClInclude Include="src\Tiger\Window.h" />
-    <ClInclude Include="src\Tiger\Platform\Windows\WinWindow.h" />
+    <ClInclude Include="src\Tiger\Layer.h" />
+    <ClInclude Include="src\Tiger\ImGUI\GUILayer.h" />
+    <ClInclude Include="src\Tiger\LayerStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Tiger\Application.cpp">
       <Filter>Tiger</Filter>
     </ClCompile>
+    <ClCompile Include="src\Tiger\ImGUI\ImGUIBuild.cpp">
+      <Filter>Tiger\ImGUI</Filter>
+    </ClCompile>
     <ClCompile Include="src\Tiger\Log.cpp">
       <Filter>Tiger</Filter>
     </ClCompile>
+    <ClCompile Include="src\Tiger\Platform\Windows\WinWindow.cpp">
+      <Filter>Tiger\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tiger\Window.cpp">
+      <Filter>Tiger</Filter>
+    </ClCompile>
     <ClCompile Include="src\tgpch.cpp" />
-    <ClCompile Include="src\Tiger\Window.cpp" />
-    <ClCompile Include="src\Tiger\Platform\Windows\WinWindow.cpp" />
+    <ClCompile Include="src\Tiger\ImGUI\GUILayer.cpp" />
+    <ClCompile Include="src\Tiger\LayerStack.cpp" />
   </ItemGroup>
 </Project>

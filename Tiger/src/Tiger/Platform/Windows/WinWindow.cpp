@@ -11,7 +11,6 @@ namespace Tiger {
 
 	Tiger::WinWindow::~WinWindow()
 	{
-		shutdown();
 	}
 
 	void Tiger::WinWindow::destroyWindow()
@@ -28,6 +27,7 @@ namespace Tiger {
 	{
 		destroyWindow();
 		terminate();
+		TG_INFO("Window shutdown");
 	}
 
 	void WinWindow::init(const char* title, int width, int height)
@@ -35,8 +35,9 @@ namespace Tiger {
 		if (!WinWindow::glfwInitialized) {
 			TG_ASSERT(glfwInit(), "GLFW failed to initialize");
 		}
-		glfwWindowHint(GLFW_VERSION_MAJOR, 4);
-		glfwWindowHint(GLFW_VERSION_MINOR, 5);
+#ifdef TG_DEBUG
+		glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, true);
+#endif
 		window = glfwCreateWindow(width, height, title, NULL, NULL);
 		TG_ASSERT(window, "GLFW failed to create window");
 		glfwSetWindowUserPointer(window, this);
@@ -152,7 +153,6 @@ namespace Tiger {
 
 	void WinWindow::onUpdate()
 	{
-
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}

@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 
 #include "Core.h"
 
@@ -13,6 +14,7 @@ int main(int argc, char** argv) {
 	APP_INFO("App initialized");
 	app->run();
 	delete app;
+	std::cin.get();
 	return 0;
 }
 
