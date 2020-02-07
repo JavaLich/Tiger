@@ -83,11 +83,14 @@ namespace Tiger {
 
 	void GUILayer::onEvent(Event& event)
 	{
+		ImGuiIO& io = ImGui::GetIO(); (void)io;
+		if (io.WantCaptureMouse && event.getType() == Tiger::EventType::EVENT_TYPE_MOUSE) event.handled = true;
+		if (io.WantCaptureKeyboard && event.getType() == Tiger::EventType::EVENT_TYPE_KEYBOARD) event.handled = true;
 	}
 
 	void GUILayer::onDebugGUIRender()
 	{
-		ImGui::ShowDemoWindow();
+		
 	}
 
 	void GUILayer::startRender()

@@ -3,6 +3,7 @@
 #include "glad/glad.h"
 
 #include "imgui.h"
+
 namespace Tiger {
 
 	Application* Application::instance = nullptr;
@@ -25,7 +26,7 @@ namespace Tiger {
 
 	void Application::run()
 	{
-		float* color = new float[4];
+		float color[] = { 0, 0, 0, 0 };
 		while (running) {
 			glClearColor(color[0], color[1], color[2], color[3]);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -45,19 +46,30 @@ namespace Tiger {
 			
 			window->onUpdate();
 		}
+		shutdown();
 	}
 
 	void Application::onEvent(Event& event)
 	{
-		if (event.getID() == EventID::EVENT_WINDOW_CLOSED) {
-			shutdown();
+		Dispatcher dispatcher = Dispatcher(event);
+		dispatcher.dispatch<WindowCloseEvent>(std::bind(&Application::onWindowClose, this, std::placeholders::_1));
+
+		for (auto i = stack.rbegin(); i != stack.rend(); i++) {
+			if (event.handled) break;
+			(*i)->onEvent(event);
 		}
 	}
+
+	bool Application::onWindowClose(WindowCloseEvent& event)
+	{
+		running = false;
+		return true;
+	}
+
 	void Application::shutdown()
 	{
 		stack.shutdown();
 		window->shutdown();
-		running = false;
 		TG_INFO("Application shutdown");
 	}
 

@@ -16,6 +16,7 @@ namespace Tiger {
 		virtual void onDetach() = 0;
 		virtual void onEvent(Event& event) = 0;
 		virtual void onDebugGUIRender() = 0;
+		inline std::string getDebugName() { return debugName; }
 	protected:
 		std::string debugName;
 	};

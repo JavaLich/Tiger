@@ -19,6 +19,7 @@ namespace Tiger {
 		void run();
 
 		void onEvent(Event& event);
+		bool onWindowClose(WindowCloseEvent& event);
 		void shutdown();
 		inline static Application& get() { return *instance; }
 		inline Window& getWindow() { return *window; }

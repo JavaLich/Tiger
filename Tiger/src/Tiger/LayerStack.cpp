@@ -14,7 +14,7 @@ namespace Tiger {
 
 	void LayerStack::push(Layer* layer)
 	{
-		if (overlayIndex == -1) {
+		if (overlayIndex != -1) {
 			stack.emplace(overlayBottom(), layer);
 			overlayIndex++;
 		}
