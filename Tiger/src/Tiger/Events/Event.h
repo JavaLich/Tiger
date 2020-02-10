@@ -9,27 +9,31 @@ static int getStaticType() { return x; }
 
 namespace Tiger {
 
-	enum EventType {
-		EVENT_TYPE_APPLICATION = BIT(0),
-		EVENT_TYPE_WINDOW = BIT(1),
-		EVENT_TYPE_KEYBOARD = BIT(2),
-		EVENT_TYPE_MOUSE = BIT(3),
-		EVENT_TYPE_GAMEPLAY = BIT(4)
-	};
 	
-	enum class EventID {
-		EVENT_MOUSE_MOVED,
-		EVENT_MOUSE_PRESSED,
-		EVENT_MOUSE_RELEASED,
-		EVENT_KEY_PRESSED,
-		EVENT_KEY_RELEASED,
-		EVENT_WINDOW_RESIZED,
-		EVENT_WINDOW_CLOSED
-	};
 	
 	
 	class TIGER_API Event
 	{
+	public:
+
+		enum EventType {
+			EVENT_TYPE_APPLICATION = BIT(0),
+			EVENT_TYPE_WINDOW = BIT(1),
+			EVENT_TYPE_KEYBOARD = BIT(2),
+			EVENT_TYPE_MOUSE = BIT(3),
+			EVENT_TYPE_GAMEPLAY = BIT(4)
+		};
+
+		enum class EventID {
+			EVENT_MOUSE_MOVED,
+			EVENT_MOUSE_PRESSED,
+			EVENT_MOUSE_RELEASED,
+			EVENT_KEY_PRESSED,
+			EVENT_KEY_RELEASED,
+			EVENT_WINDOW_RESIZED,
+			EVENT_WINDOW_CLOSED
+		};
+
 	public:
 		Event() = default;
 		~Event() = default;

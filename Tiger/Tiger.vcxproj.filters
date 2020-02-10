@@ -53,6 +53,8 @@
     <ClInclude Include="src\Tiger\Layer.h" />
     <ClInclude Include="src\Tiger\ImGUI\GUILayer.h" />
     <ClInclude Include="src\Tiger\LayerStack.h" />
+    <ClInclude Include="src\Tiger\Input.h" />
+    <ClInclude Include="src\Tiger\Platform\Windows\WinInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Tiger\Application.cpp">
@@ -73,5 +75,7 @@
     <ClCompile Include="src\tgpch.cpp" />
     <ClCompile Include="src\Tiger\ImGUI\GUILayer.cpp" />
     <ClCompile Include="src\Tiger\LayerStack.cpp" />
+    <ClCompile Include="src\Tiger\Input.cpp" />
+    <ClCompile Include="src\Tiger\Platform\Windows\WinInput.cpp" />
   </ItemGroup>
 </Project>

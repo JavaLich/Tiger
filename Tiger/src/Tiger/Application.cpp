@@ -16,6 +16,8 @@ namespace Tiger {
 		window = Window::createWindow();
 		window->setEventCallback(std::bind(&Application::onEvent, this, std::placeholders::_1));
 
+		Input::initializeInput();
+
 		guiLayer = new GUILayer();
 		stack.pushOverlay(guiLayer);
 	}

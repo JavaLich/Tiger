@@ -7,7 +7,7 @@ namespace Tiger {
 #ifdef TG_PLATFORM_WINDOWS
 		return std::make_unique<WinWindow>(title, width, height);
 #endif 
-		TG_ERROR("Tiger only supports Windows!");
+		TG_ERROR("Tiger only supports Windows");
 		return nullptr;
 	}
 }

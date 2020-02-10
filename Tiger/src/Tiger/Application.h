@@ -3,6 +3,7 @@
 #include "Core.h"
 #include "Log.h"
 #include "Window.h"
+#include "Input.h"
 
 #include "Events/Event.h"
 #include "Events/MouseEvent.h"
