@@ -4,7 +4,7 @@
 
 namespace Tiger {
 
-	std::unique_ptr<Input> Input::instance;
+	Scope<Input> Input::instance;
 
 	void Input::initializeInput()
 	{

@@ -14,12 +14,12 @@ namespace Tiger {
 
 		static void init();
 
-		inline static std::shared_ptr<spdlog::logger>& getCoreLogger() { return coreLogger; }
-		inline static std::shared_ptr<spdlog::logger>& getAppLogger() { return clientLogger; }
+		inline static Ref<spdlog::logger>& getCoreLogger() { return coreLogger; }
+		inline static Ref<spdlog::logger>& getAppLogger() { return clientLogger; }
 		
 	private:
-		static std::shared_ptr<spdlog::logger> coreLogger;
-		static std::shared_ptr<spdlog::logger> clientLogger;
+		static Ref<spdlog::logger> coreLogger;
+		static Ref<spdlog::logger> clientLogger;
 	};
 
 }

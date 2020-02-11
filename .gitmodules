@@ -10,3 +10,6 @@
 [submodule "Tiger/vendor/imgui"]
 	path = Tiger/vendor/imgui
 	url = https://github.com/JavaLich/imgui
+[submodule "Tiger/vendor/glm"]
+	path = Tiger/vendor/glm
+	url = https://github.com/JavaLich/glm

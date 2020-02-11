@@ -1,8 +1,11 @@
 #include "Application.h"
 
-#include "glad/glad.h"
+#include <glad/glad.h>
 
-#include "imgui.h"
+#include <imgui.h>
+
+#include <glm/glm.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 namespace Tiger {
 
@@ -28,7 +31,7 @@ namespace Tiger {
 
 	void Application::run()
 	{
-		float color[] = { 0, 0, 0, 0 };
+		glm::vec4 color = glm::vec4(0, 0, 0, 0);
 		while (running) {
 			glClearColor(color[0], color[1], color[2], color[3]);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -42,7 +45,7 @@ namespace Tiger {
 				layer->onDebugGUIRender();
 			}
 			ImGui::Begin("Background");
-			ImGui::ColorPicker4("Background Color", color);
+			ImGui::ColorPicker4("Background Color", glm::value_ptr(color));
 			ImGui::End();
 			guiLayer->endRender();
 			

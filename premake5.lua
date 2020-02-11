@@ -39,6 +39,7 @@ workspace "Tiger"
 			"%{prj.name}/vendor/spdlog/include",
 			"%{prj.name}/vendor/GLFW/include",
 			"%{prj.name}/vendor/glad/include",
+			"%{prj.name}/vendor/glm",
 			"%{prj.name}/src"
 		}
 
@@ -84,6 +85,7 @@ workspace "Tiger"
 		includedirs{
 			"Tiger/vendor",
 			"Tiger/vendor/spdlog/include",
+			"%{prj.name}/vendor/glm",
 			"Tiger/src"
 		}
 

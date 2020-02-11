@@ -14,7 +14,7 @@ namespace Tiger {
 		static void initializeInput();
 		inline static Input& get() { return *instance; };
 	private:
-		static std::unique_ptr<Input> instance;
+		static Scope<Input> instance;
 	};
 
 }

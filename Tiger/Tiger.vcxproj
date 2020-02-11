@@ -77,7 +77,7 @@
       <PrecompiledHeaderFile>tgpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>TG_PLATFORM_WINDOWS;TG_STATIC;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;TG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\imgui;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\imgui;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\glm;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>tgpch.h</ForcedIncludeFiles>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
@@ -95,7 +95,7 @@
       <PrecompiledHeaderFile>tgpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>TG_PLATFORM_WINDOWS;TG_STATIC;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;TG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\imgui;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\imgui;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\glm;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>tgpch.h</ForcedIncludeFiles>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -117,7 +117,7 @@
       <PrecompiledHeaderFile>tgpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>TG_PLATFORM_WINDOWS;TG_STATIC;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;TG_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\imgui;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\imgui;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\glm;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>tgpch.h</ForcedIncludeFiles>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -134,9 +134,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Tiger\Input.h" />
-    <ClInclude Include="src\Tiger\Layer.h" />
-    <ClInclude Include="src\Tiger\ImGUI\GUILayer.h" />
     <ClInclude Include="src\Tiger.h" />
     <ClInclude Include="src\Tiger\Application.h" />
     <ClInclude Include="src\Tiger\Core.h" />
@@ -145,6 +142,9 @@
     <ClInclude Include="src\Tiger\Events\Event.h" />
     <ClInclude Include="src\Tiger\Events\KeyEvent.h" />
     <ClInclude Include="src\Tiger\Events\MouseEvent.h" />
+    <ClInclude Include="src\Tiger\ImGUI\GUILayer.h" />
+    <ClInclude Include="src\Tiger\Input.h" />
+    <ClInclude Include="src\Tiger\Layer.h" />
     <ClInclude Include="src\Tiger\LayerStack.h" />
     <ClInclude Include="src\Tiger\Log.h" />
     <ClInclude Include="src\Tiger\Platform\Windows\WinInput.h" />
@@ -153,8 +153,8 @@
     <ClInclude Include="src\tgpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Tiger\ImGUI\GUILayer.cpp" />
     <ClCompile Include="src\Tiger\Application.cpp" />
+    <ClCompile Include="src\Tiger\ImGUI\GUILayer.cpp" />
     <ClCompile Include="src\Tiger\ImGUI\ImGUIBuild.cpp" />
     <ClCompile Include="src\Tiger\Input.cpp" />
     <ClCompile Include="src\Tiger\LayerStack.cpp" />

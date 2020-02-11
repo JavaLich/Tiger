@@ -40,8 +40,23 @@
     <ClInclude Include="src\Tiger\Events\MouseEvent.h">
       <Filter>Tiger\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Tiger\ImGUI\GUILayer.h">
+      <Filter>Tiger\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tiger\Input.h">
+      <Filter>Tiger</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tiger\Layer.h">
+      <Filter>Tiger</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tiger\LayerStack.h">
+      <Filter>Tiger</Filter>
+    </ClInclude>
     <ClInclude Include="src\Tiger\Log.h">
       <Filter>Tiger</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tiger\Platform\Windows\WinInput.h">
+      <Filter>Tiger\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Tiger\Platform\Windows\WinWindow.h">
       <Filter>Tiger\Platform\Windows</Filter>
@@ -50,21 +65,28 @@
       <Filter>Tiger</Filter>
     </ClInclude>
     <ClInclude Include="src\tgpch.h" />
-    <ClInclude Include="src\Tiger\Layer.h" />
-    <ClInclude Include="src\Tiger\ImGUI\GUILayer.h" />
-    <ClInclude Include="src\Tiger\LayerStack.h" />
-    <ClInclude Include="src\Tiger\Input.h" />
-    <ClInclude Include="src\Tiger\Platform\Windows\WinInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Tiger\Application.cpp">
       <Filter>Tiger</Filter>
     </ClCompile>
+    <ClCompile Include="src\Tiger\ImGUI\GUILayer.cpp">
+      <Filter>Tiger\ImGUI</Filter>
+    </ClCompile>
     <ClCompile Include="src\Tiger\ImGUI\ImGUIBuild.cpp">
       <Filter>Tiger\ImGUI</Filter>
     </ClCompile>
+    <ClCompile Include="src\Tiger\Input.cpp">
+      <Filter>Tiger</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tiger\LayerStack.cpp">
+      <Filter>Tiger</Filter>
+    </ClCompile>
     <ClCompile Include="src\Tiger\Log.cpp">
       <Filter>Tiger</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tiger\Platform\Windows\WinInput.cpp">
+      <Filter>Tiger\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Tiger\Platform\Windows\WinWindow.cpp">
       <Filter>Tiger\Platform\Windows</Filter>
@@ -73,9 +95,5 @@
       <Filter>Tiger</Filter>
     </ClCompile>
     <ClCompile Include="src\tgpch.cpp" />
-    <ClCompile Include="src\Tiger\ImGUI\GUILayer.cpp" />
-    <ClCompile Include="src\Tiger\LayerStack.cpp" />
-    <ClCompile Include="src\Tiger\Input.cpp" />
-    <ClCompile Include="src\Tiger\Platform\Windows\WinInput.cpp" />
   </ItemGroup>
 </Project>

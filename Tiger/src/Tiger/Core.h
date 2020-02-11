@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #ifdef TG_PLATFORM_WINDOWS
 	#ifdef TG_STATIC
 		#define TIGER_API
@@ -25,3 +27,8 @@
 	#define APP_ASSERT(x, ...) 
 #endif 
 
+template<typename T>
+using Scope = std::unique_ptr<T>;
+
+template<typename T>
+using Ref = std::shared_ptr<T>;

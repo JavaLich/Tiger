@@ -34,6 +34,6 @@ namespace Tiger {
 		virtual void onUpdate() = 0;
 		virtual void* getNativeWindow() = 0;
 
-		static std::unique_ptr<Window> createWindow(const char* title = "Tiger Engine", int width = 1280, int height = 720);		
+		static Scope<Window> createWindow(const char* title = "Tiger Engine", int width = 1280, int height = 720);		
 	};
 }

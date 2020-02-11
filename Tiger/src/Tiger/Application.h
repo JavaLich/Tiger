@@ -29,7 +29,7 @@ namespace Tiger {
 		LayerStack stack;
 	private:
 		static Application* instance;
-		std::unique_ptr<Window> window;
+		Scope<Window> window;
 		GUILayer* guiLayer;
 	};
 
