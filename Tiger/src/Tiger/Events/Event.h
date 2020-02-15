@@ -5,12 +5,9 @@
 #define EVENT_TYPE(x) virtual int getType() const override { return x; } \
 static int getStaticType() { return x; }
 
-#define EVENT_ID(x) virtual EventID getID() const override { return x; }
+#define EVENT_ID(x) virtual EventID getID() const override { return x; } static Tiger::Event::EventID getStaticID() { return x; }
 
 namespace Tiger {
-
-	
-	
 	
 	class TIGER_API Event
 	{
@@ -49,7 +46,7 @@ namespace Tiger {
 
 		template<typename T>
 		bool dispatch(std::function<bool(T&)> f) {
-			if (event.getType() == T::getStaticType()) {
+			if (event.getID() == T::getStaticID()) {
 				event.handled=f(static_cast<T&>(event));
 				return true;
 			}

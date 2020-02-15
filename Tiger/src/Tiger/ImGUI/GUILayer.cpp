@@ -12,6 +12,7 @@
 ----------------------TEMPORARY------------------------
 -------------------------------------------------------
 */
+
 #include "Tiger/Application.h"
 
 #include "imgui.h"
@@ -34,18 +35,6 @@ namespace Tiger {
 
 	void GUILayer::onAttach()
 	{
-		/*
-		-------------------------------------------------------
-		----------------------TEMPORARY------------------------
-		-------------------------------------------------------
-		*/
-		TG_ASSERT(gladLoadGLLoader((GLADloadproc)glfwGetProcAddress), "Glad failed to initalize");
-		/*
-		-------------------------------------------------------
-		----------------------TEMPORARY------------------------
-		-------------------------------------------------------
-		*/
-
 		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
@@ -90,7 +79,7 @@ namespace Tiger {
 
 	void GUILayer::onDebugGUIRender()
 	{
-		
+		ImGui::ShowDemoWindow();
 	}
 
 	void GUILayer::startRender()

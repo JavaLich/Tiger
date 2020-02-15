@@ -1,11 +1,6 @@
 #include "Application.h"
 
-#include <glad/glad.h>
-
-#include <imgui.h>
-
-#include <glm/glm.hpp>
-#include <glm/gtc/type_ptr.hpp>
+#include "Rendering/Renderer.h"
 
 namespace Tiger {
 
@@ -21,6 +16,8 @@ namespace Tiger {
 
 		Input::initializeInput();
 
+		Renderer::init();
+
 		guiLayer = new GUILayer();
 		stack.pushOverlay(guiLayer);
 	}
@@ -31,11 +28,7 @@ namespace Tiger {
 
 	void Application::run()
 	{
-		glm::vec4 color = glm::vec4(0, 0, 0, 0);
 		while (running) {
-			glClearColor(color[0], color[1], color[2], color[3]);
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 			for (Layer* layer : stack) {
 				layer->onUpdate();
 			}
@@ -44,9 +37,6 @@ namespace Tiger {
 			for (Layer* layer : stack) {
 				layer->onDebugGUIRender();
 			}
-			ImGui::Begin("Background");
-			ImGui::ColorPicker4("Background Color", glm::value_ptr(color));
-			ImGui::End();
 			guiLayer->endRender();
 			
 			window->onUpdate();
@@ -58,6 +48,7 @@ namespace Tiger {
 	{
 		Dispatcher dispatcher = Dispatcher(event);
 		dispatcher.dispatch<WindowCloseEvent>(std::bind(&Application::onWindowClose, this, std::placeholders::_1));
+		dispatcher.dispatch<WindowResizedEvent>(std::bind(&Application::onWindowResize, this, std::placeholders::_1));
 
 		for (auto i = stack.rbegin(); i != stack.rend(); i++) {
 			if (event.handled) break;
@@ -71,10 +62,17 @@ namespace Tiger {
 		return true;
 	}
 
+	bool Application::onWindowResize(WindowResizedEvent& event)
+	{
+		RenderCommand::setViewport(0, 0, event.getWidth(), event.getHeight());
+		return true;
+	}
+
 	void Application::shutdown()
 	{
 		stack.shutdown();
 		window->shutdown();
+		Renderer::shutdown();
 		TG_INFO("Application shutdown");
 	}
 
