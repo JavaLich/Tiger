@@ -7,7 +7,7 @@
 namespace Tiger {
 	class GLShader : public Shader {
 	public:
-		GLShader(std::vector<ShaderStage> shaders);
+		GLShader(std::initializer_list<ShaderStage> list);
 		~GLShader();
 		virtual void compile(std::vector<ShaderStage> shaders) override;
 		virtual void bind() override;

@@ -2,20 +2,22 @@
 
 
 
+GameLayer::~GameLayer()
+{
+	TG_INFO("Game Layer shutdown");
+}
+
 void GameLayer::onAttach()
 {
 	vao = Tiger::VertexArray::create();
 	float vertices[9] = { -0.5f, -0.5f, 0.0f,
 	 0.5f, -0.5f, 0.0f,
 	 0.0f,  0.5f, 0.0f };
-	buffer = Tiger::VertexBuffer::create(vertices, sizeof(vertices));
-	std::vector<Tiger::VertexBuffer::Attribute> attributes = {
+	buffer = Tiger::VertexBuffer::create(vertices, sizeof(vertices), {
 		{Tiger::VertexBuffer::Type::Float, 3}
-	};
-	buffer->setAttributes(attributes);
+		});
 	vao->addVertexBuffer(buffer);
-	std::vector<Tiger::Shader::ShaderStage> stages = { {Tiger::Shader::ShaderType::VertexShader, "assets/vertex.glsl"}, {Tiger::Shader::ShaderType::FragmentShader, "assets/fragment.glsl"} };
-	shader = Tiger::Shader::create(stages);
+	shader = Tiger::Shader::create({ {Tiger::Shader::ShaderType::VertexShader, "assets/vertex.glsl"}, {Tiger::Shader::ShaderType::FragmentShader, "assets/fragment.glsl"} });
 	Tiger::RenderCommand::setViewport(0, 0, 1280, 720);
 }
 

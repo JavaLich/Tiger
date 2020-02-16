@@ -5,17 +5,17 @@
 
 namespace Tiger {
 
-	void VertexBuffer::setAttributes(std::vector<Attribute>& attributes)
+	void VertexBuffer::setAttributes(std::initializer_list<Attribute> list)
 	{
-		this->attributes = attributes;
+		this->attributes = list;
 		calculateStridesAndOffsets();
 	}
 
-	Ref<VertexBuffer> VertexBuffer::create(float* vertices, uint32_t size)
+	Ref<VertexBuffer> VertexBuffer::create(float* vertices, uint32_t size, std::initializer_list<Attribute> list)
 	{
 		switch (Renderer::getAPI()) {
 		case(RenderAPI::API::OpenGL):
-			return MakeRef<GLVertexBuffer>(vertices, size);
+			return MakeRef<GLVertexBuffer>(vertices, size, list);
 		}
 
 		TG_ASSERT(false, "Unsupported rendering API");

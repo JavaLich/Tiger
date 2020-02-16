@@ -11,9 +11,9 @@ namespace Tiger {
 		shaders.insert({ name, shader });
 	}
 
-	void ShaderManager::load(const std::string& name, std::vector<Shader::ShaderStage> stages)
+	void ShaderManager::load(const std::string& name, std::initializer_list<Shader::ShaderStage> list)
 	{
-		Ref<Shader> shader = Shader::create(stages);
+		Ref<Shader> shader = Shader::create(list);
 		shaders.insert({ name, shader });
 	}
 
@@ -22,11 +22,11 @@ namespace Tiger {
 		return shaders[name];
 	}
 
-	Ref<Shader> Shader::create(std::vector<ShaderStage> shaders)
+	Ref<Shader> Shader::create(std::initializer_list<ShaderStage> list)
 	{
 		switch (Renderer::getAPI()) {
 		case(RenderAPI::API::OpenGL):
-			return MakeRef<GLShader>(shaders);
+			return MakeRef<GLShader>(list);
 		}
 		TG_ASSERT(false, "Unsupported renderering API");
 

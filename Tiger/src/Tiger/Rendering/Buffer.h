@@ -40,15 +40,16 @@ namespace Tiger {
 		virtual void bind() const = 0;
 		virtual void unbind() const = 0;
 
-		void setAttributes(std::vector<Attribute>& attributes);
+		void setAttributes(std::initializer_list<Attribute> list);
 		inline uint32_t getStride() const { return stride; }
 		inline std::vector<Attribute> getAttributes() const { return attributes; }
 
-		static Ref<VertexBuffer> create(float* vertices, uint32_t size);
+		static Ref<VertexBuffer> create(float* vertices, uint32_t size, std::initializer_list<Attribute> list);
 	private:
 		void calculateStridesAndOffsets();
 	private:
 		uint32_t stride;
+	protected:
 		std::vector<Attribute> attributes;
 	};
 

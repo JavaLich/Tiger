@@ -5,7 +5,7 @@
 class GameLayer : public Tiger::Layer {
 public:
 	GameLayer() : Tiger::Layer("Game Layer") {}
-	~GameLayer() = default;
+	~GameLayer();
 
 	virtual void onAttach() override;
 	virtual void onDetach() override;

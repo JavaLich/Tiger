@@ -13,8 +13,9 @@ namespace Tiger {
 		return 0;
 	}
 
-	GLShader::GLShader(std::vector<ShaderStage> shaders)
+	GLShader::GLShader(std::initializer_list<ShaderStage> list)
 	{
+		std::vector<ShaderStage> shaders = list;
 		compile(shaders);
 	}
 

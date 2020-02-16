@@ -40,13 +40,13 @@ namespace Tiger {
 		virtual void bind() = 0;
 		virtual void unbind() = 0;
 
-		static Ref<Shader> create(std::vector<ShaderStage> shaders);	
+		static Ref<Shader> create(std::initializer_list<ShaderStage> list);	
 	};
 
 	class ShaderManager {
 	public:
 		void add(const std::string& name, const Ref<Shader>& shader);
-		void load(const std::string& name, std::vector<Shader::ShaderStage> stages);
+		void load(const std::string& name, std::initializer_list<Shader::ShaderStage> list);
 		Ref<Shader> get(const std::string& name);
 	private:
 		std::unordered_map<std::string, Ref<Shader>> shaders;
