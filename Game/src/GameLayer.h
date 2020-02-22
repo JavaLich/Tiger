@@ -16,6 +16,6 @@ public:
 	virtual void onDebugGUIRender() override;
 private:
 	Tiger::Ref<Tiger::VertexArray> vao;
-	Tiger::Ref<Tiger::VertexBuffer> buffer;
 	Tiger::Ref<Tiger::Shader> shader;
+	Tiger::Ref<Tiger::Texture> texture;
 };

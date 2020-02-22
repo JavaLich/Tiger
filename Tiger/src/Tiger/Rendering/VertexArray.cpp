@@ -8,6 +8,11 @@ namespace Tiger {
 
 
 
+	uint32_t VertexArray::getCount()
+	{
+		return indexBuffer->getCount();
+	}
+
 	Ref<VertexArray> VertexArray::create()
 	{
 		switch (Renderer::getAPI()) {

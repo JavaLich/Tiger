@@ -14,6 +14,8 @@ namespace Tiger {
 		shader->bind();
 		vertexArray->bind();
 		RenderCommand::render(vertexArray);
+		vertexArray->unbind();
+		shader->unbind();
 	}
 
 	void Renderer::shutdown()

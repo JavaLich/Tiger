@@ -13,6 +13,7 @@ namespace Tiger {
 		const char* message,
 		const void* userParam)
 	{
+		TG_ASSERT(false, "Encountered OpenGL error");
 		switch (severity)
 		{
 		case GL_DEBUG_SEVERITY_HIGH:         TG_CRITICAL(message); return;
@@ -26,7 +27,6 @@ namespace Tiger {
 
 	void GLRenderAPI::init()
 	{
-		TG_ASSERT(gladLoadGLLoader((GLADloadproc)glfwGetProcAddress), "Glad failed to initalize");
 
 #ifdef TG_DEBUG
 		glEnable(GL_DEBUG_OUTPUT);
@@ -35,6 +35,9 @@ namespace Tiger {
 
 		glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DEBUG_SEVERITY_NOTIFICATION, 0, NULL, GL_FALSE);
 #endif
+
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	}
 
@@ -55,7 +58,7 @@ namespace Tiger {
 
 	void GLRenderAPI::render(const Ref<VertexArray> vertexArray)
 	{
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glDrawElements(GL_TRIANGLES, vertexArray->getCount(), GL_UNSIGNED_INT, 0);
 	}
 
 }

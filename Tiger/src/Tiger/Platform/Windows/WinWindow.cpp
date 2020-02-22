@@ -1,5 +1,7 @@
 #include "WinWindow.h"
 
+#include "Tiger/Rendering/Renderer.h"
+
 namespace Tiger {
 
 	bool WinWindow::glfwInitialized = false;
@@ -36,15 +38,17 @@ namespace Tiger {
 			TG_ASSERT(glfwInit(), "GLFW failed to initialize");
 		}
 #ifdef TG_DEBUG
-		glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, true);
+		if (Renderer::getAPI() == RenderAPI::API::OpenGL) {
+			glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, true);
+		}
 #endif
 
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
-		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
 		window = glfwCreateWindow(width, height, title, NULL, NULL);
-		TG_ASSERT(window, "GLFW failed to create window");
+		TG_ASSERT(window, "GLFW failed to create window")
+
+		context = GraphicsContext::create(window);
+		context->init();
+
 		glfwSetWindowUserPointer(window, this);
 
 		glfwSetKeyCallback(window, [](GLFWwindow* window, int key, int scancode, int action, int mods) {
@@ -90,7 +94,6 @@ namespace Tiger {
 			}
 		});
 
-		glfwMakeContextCurrent(window);
 	}
 
 	void Tiger::WinWindow::setSize(int width, int height)
@@ -158,7 +161,7 @@ namespace Tiger {
 
 	void WinWindow::onUpdate()
 	{
-		glfwSwapBuffers(window);
+		context->swapBuffers();
 		glfwPollEvents();
 	}
 

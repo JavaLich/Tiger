@@ -12,11 +12,13 @@ namespace Tiger {
 		~GLVertexArray();
 
 		virtual void addVertexBuffer(const Ref<VertexBuffer>& buffer) override;
+		virtual void setIndexBuffer(const Ref<IndexBuffer>& buffer) override;
 		virtual void bind() const override;
 		virtual void unbind() const override;
 	private:
+		void setupVAO();
+
 		GLuint id;
-		std::vector<Ref<VertexBuffer>> vertBuffers;
 	};
 
 }

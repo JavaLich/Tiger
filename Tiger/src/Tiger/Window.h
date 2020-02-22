@@ -6,6 +6,8 @@
 #include "Events/AppEvent.h"
 #include "Events/KeyEvent.h"
 
+#include "Tiger/Rendering/GraphicsContext.h"
+
 namespace Tiger {
 	class TIGER_API Window {
 	public:
@@ -34,6 +36,8 @@ namespace Tiger {
 		virtual void onUpdate() = 0;
 		virtual void* getNativeWindow() = 0;
 
-		static Scope<Window> createWindow(const char* title = "Tiger Engine", int width = 1280, int height = 720);		
+		static Scope<Window> createWindow(const char* title = "Tiger Engine", int width = 1280, int height = 720);	
+	protected:
+		Scope<GraphicsContext> context;
 	};
 }

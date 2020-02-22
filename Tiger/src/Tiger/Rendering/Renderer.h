@@ -2,6 +2,7 @@
 
 #include "RenderAPI.h"
 #include "Shader.h"
+#include "Texture.h"
 
 namespace Tiger {
 

@@ -40,6 +40,7 @@ workspace "Tiger"
 			"%{prj.name}/vendor/GLFW/include",
 			"%{prj.name}/vendor/glad/include",
 			"%{prj.name}/vendor/glm",
+			"%{prj.name}/vendor/stb_image",
 			"%{prj.name}/src"
 		}
 
@@ -86,6 +87,7 @@ workspace "Tiger"
 			"Tiger/vendor",
 			"Tiger/vendor/spdlog/include",
 			"Tiger/vendor/glm",
+			"Tiger/vendor/stb_image",
 			"Tiger/src"
 		}
 

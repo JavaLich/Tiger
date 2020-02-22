@@ -5,3 +5,4 @@ bin-int/
 *.user
 
 Game/imgui.ini
+Game/assets/textures/

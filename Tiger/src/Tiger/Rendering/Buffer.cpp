@@ -25,12 +25,29 @@ namespace Tiger {
 	void VertexBuffer::calculateStridesAndOffsets()
 	{
 		uint16_t currentOffset = 0;
-		for (auto attribute : attributes) {
-			attribute.offset = currentOffset;
-			currentOffset += getTypeSize(attribute.type, attribute.count);
+		
+		for (auto it = attributes.begin(); it != attributes.end(); ++it) {
+			(*it).offset = currentOffset;
+			currentOffset += getTypeSize((*it).type, (*it).count);
 		}
 
 		stride = currentOffset;
+	}
+
+	uint32_t IndexBuffer::getCount()
+	{
+		return count;
+	}
+
+	Ref<IndexBuffer> IndexBuffer::create(uint32_t* indices, uint32_t size)
+	{
+		switch (Renderer::getAPI()) {
+		case(RenderAPI::API::OpenGL):
+			return MakeRef<GLIndexBuffer>(indices, size);
+		}
+
+		TG_ASSERT(false, "Unsupported rendering API");
+		return Ref<IndexBuffer>();
 	}
 
 }

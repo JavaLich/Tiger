@@ -1,5 +1,7 @@
 #include "GLShader.h"
 
+#include <glm/gtc/type_ptr.hpp>
+
 namespace Tiger {
 
 	static GLuint getShaderType(Shader::ShaderType type) {
@@ -68,6 +70,30 @@ namespace Tiger {
 	void GLShader::unbind()
 	{
 		glUseProgram(0);
+	}
+
+	void GLShader::setVec4(std::string location, glm::vec4 value) const
+	{
+		uint32_t loc = glGetUniformLocation(id, location.c_str());
+		if (loc == -1)
+			TG_ERROR("Couldn't find uniform location: {0}", location);
+		glUniform4fv(loc, 1, glm::value_ptr(value));
+	}
+
+	void GLShader::setVec2(std::string location, glm::vec2 value) const
+	{
+		uint32_t loc = glGetUniformLocation(id, location.c_str());
+		if (loc == -1)
+			TG_ERROR("Couldn't find uniform location: {0}", location);
+		glUniform2fv(loc, 1, glm::value_ptr(value));
+	}
+
+	void GLShader::setInt(std::string location, int value) const
+	{
+		uint32_t loc = glGetUniformLocation(id, location.c_str());
+		if (loc == -1)
+			TG_ERROR("Couldn't find uniform location: {0}", location);
+		glUniform1i(loc, value);
 	}
 
 }

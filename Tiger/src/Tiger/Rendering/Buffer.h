@@ -4,9 +4,6 @@
 
 namespace Tiger {
 
-	
-
-
 	class VertexBuffer {
 	public:
 		enum class Type {
@@ -51,6 +48,17 @@ namespace Tiger {
 		uint32_t stride;
 	protected:
 		std::vector<Attribute> attributes;
+	};
+
+	class IndexBuffer {
+	public:
+		virtual void bind() const = 0;
+		virtual void unbind() const = 0;
+		virtual uint32_t getCount();
+
+		static Ref<IndexBuffer> create(uint32_t* indices, uint32_t size);
+	protected:
+		uint32_t count;
 	};
 
 }

@@ -24,4 +24,26 @@ namespace Tiger {
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 
+	GLIndexBuffer::GLIndexBuffer(uint32_t* indices, uint32_t size) {
+		count = size / sizeof(uint32_t);
+		glGenBuffers(1, &id);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, id);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, size, indices, GL_STATIC_DRAW);
+	}
+
+	GLIndexBuffer::~GLIndexBuffer()
+	{
+		glDeleteBuffers(1, &id);
+	}
+
+	void GLIndexBuffer::bind() const
+	{
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, id);
+	}
+
+	void GLIndexBuffer::unbind() const
+	{
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, id);
+	}
+
 }

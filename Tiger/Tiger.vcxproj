@@ -77,7 +77,7 @@
       <PrecompiledHeaderFile>tgpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>TG_PLATFORM_WINDOWS;TG_STATIC;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;TG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\imgui;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\glm;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\imgui;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\glm;vendor\stb_image;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>tgpch.h</ForcedIncludeFiles>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
@@ -95,7 +95,7 @@
       <PrecompiledHeaderFile>tgpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>TG_PLATFORM_WINDOWS;TG_STATIC;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;TG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\imgui;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\glm;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\imgui;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\glm;vendor\stb_image;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>tgpch.h</ForcedIncludeFiles>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -117,7 +117,7 @@
       <PrecompiledHeaderFile>tgpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>TG_PLATFORM_WINDOWS;TG_STATIC;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;TG_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\imgui;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\glm;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\imgui;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\glm;vendor\stb_image;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>tgpch.h</ForcedIncludeFiles>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -148,15 +148,19 @@
     <ClInclude Include="src\Tiger\LayerStack.h" />
     <ClInclude Include="src\Tiger\Log.h" />
     <ClInclude Include="src\Tiger\Platform\OpenGL\GLBuffer.h" />
+    <ClInclude Include="src\Tiger\Platform\OpenGL\GLContext.h" />
     <ClInclude Include="src\Tiger\Platform\OpenGL\GLRenderAPI.h" />
     <ClInclude Include="src\Tiger\Platform\OpenGL\GLShader.h" />
+    <ClInclude Include="src\Tiger\Platform\OpenGL\GLTexture.h" />
     <ClInclude Include="src\Tiger\Platform\OpenGL\GLVertexArray.h" />
     <ClInclude Include="src\Tiger\Platform\Windows\WinInput.h" />
     <ClInclude Include="src\Tiger\Platform\Windows\WinWindow.h" />
     <ClInclude Include="src\Tiger\Rendering\Buffer.h" />
+    <ClInclude Include="src\Tiger\Rendering\GraphicsContext.h" />
     <ClInclude Include="src\Tiger\Rendering\RenderAPI.h" />
     <ClInclude Include="src\Tiger\Rendering\Renderer.h" />
     <ClInclude Include="src\Tiger\Rendering\Shader.h" />
+    <ClInclude Include="src\Tiger\Rendering\Texture.h" />
     <ClInclude Include="src\Tiger\Rendering\VertexArray.h" />
     <ClInclude Include="src\Tiger\Window.h" />
     <ClInclude Include="src\tgpch.h" />
@@ -169,17 +173,22 @@
     <ClCompile Include="src\Tiger\LayerStack.cpp" />
     <ClCompile Include="src\Tiger\Log.cpp" />
     <ClCompile Include="src\Tiger\Platform\OpenGL\GLBuffer.cpp" />
+    <ClCompile Include="src\Tiger\Platform\OpenGL\GLContext.cpp" />
     <ClCompile Include="src\Tiger\Platform\OpenGL\GLRenderAPI.cpp" />
     <ClCompile Include="src\Tiger\Platform\OpenGL\GLShader.cpp" />
+    <ClCompile Include="src\Tiger\Platform\OpenGL\GLTexture.cpp" />
     <ClCompile Include="src\Tiger\Platform\OpenGL\GLVertexArray.cpp" />
     <ClCompile Include="src\Tiger\Platform\Windows\WinInput.cpp" />
     <ClCompile Include="src\Tiger\Platform\Windows\WinWindow.cpp" />
     <ClCompile Include="src\Tiger\Rendering\Buffer.cpp" />
+    <ClCompile Include="src\Tiger\Rendering\GraphicsContext.cpp" />
     <ClCompile Include="src\Tiger\Rendering\RenderAPI.cpp" />
     <ClCompile Include="src\Tiger\Rendering\Renderer.cpp" />
     <ClCompile Include="src\Tiger\Rendering\Shader.cpp" />
+    <ClCompile Include="src\Tiger\Rendering\Texture.cpp" />
     <ClCompile Include="src\Tiger\Rendering\VertexArray.cpp" />
     <ClCompile Include="src\Tiger\Window.cpp" />
+    <ClCompile Include="src\Tiger\stb_image\stb_image.cpp" />
     <ClCompile Include="src\tgpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

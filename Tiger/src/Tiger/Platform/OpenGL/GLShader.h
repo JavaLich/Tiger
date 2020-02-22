@@ -9,9 +9,14 @@ namespace Tiger {
 	public:
 		GLShader(std::initializer_list<ShaderStage> list);
 		~GLShader();
+
 		virtual void compile(std::vector<ShaderStage> shaders) override;
 		virtual void bind() override;
 		virtual void unbind() override;
+
+		virtual void setVec4(std::string location, glm::vec4 value) const override;
+		virtual void setVec2(std::string location, glm::vec2 value) const override;
+		virtual void setInt(std::string location, int value) const override;
 	private:
 		GLuint id;
 	};

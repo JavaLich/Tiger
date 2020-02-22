@@ -22,6 +22,9 @@
     <Filter Include="Tiger\Rendering">
       <UniqueIdentifier>{2D036A64-998E-D728-A29F-5A1D0EAA3329}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tiger\stb_image">
+      <UniqueIdentifier>{7AEA3099-E675-9E5D-EF86-21525B91FA5D}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Tiger.h" />
@@ -64,10 +67,16 @@
     <ClInclude Include="src\Tiger\Platform\OpenGL\GLBuffer.h">
       <Filter>Tiger\Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="src\Tiger\Platform\OpenGL\GLContext.h">
+      <Filter>Tiger\Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Tiger\Platform\OpenGL\GLRenderAPI.h">
       <Filter>Tiger\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Tiger\Platform\OpenGL\GLShader.h">
+      <Filter>Tiger\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tiger\Platform\OpenGL\GLTexture.h">
       <Filter>Tiger\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Tiger\Platform\OpenGL\GLVertexArray.h">
@@ -82,6 +91,9 @@
     <ClInclude Include="src\Tiger\Rendering\Buffer.h">
       <Filter>Tiger\Rendering</Filter>
     </ClInclude>
+    <ClInclude Include="src\Tiger\Rendering\GraphicsContext.h">
+      <Filter>Tiger\Rendering</Filter>
+    </ClInclude>
     <ClInclude Include="src\Tiger\Rendering\RenderAPI.h">
       <Filter>Tiger\Rendering</Filter>
     </ClInclude>
@@ -89,6 +101,9 @@
       <Filter>Tiger\Rendering</Filter>
     </ClInclude>
     <ClInclude Include="src\Tiger\Rendering\Shader.h">
+      <Filter>Tiger\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tiger\Rendering\Texture.h">
       <Filter>Tiger\Rendering</Filter>
     </ClInclude>
     <ClInclude Include="src\Tiger\Rendering\VertexArray.h">
@@ -121,10 +136,16 @@
     <ClCompile Include="src\Tiger\Platform\OpenGL\GLBuffer.cpp">
       <Filter>Tiger\Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\Tiger\Platform\OpenGL\GLContext.cpp">
+      <Filter>Tiger\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Tiger\Platform\OpenGL\GLRenderAPI.cpp">
       <Filter>Tiger\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Tiger\Platform\OpenGL\GLShader.cpp">
+      <Filter>Tiger\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tiger\Platform\OpenGL\GLTexture.cpp">
       <Filter>Tiger\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Tiger\Platform\OpenGL\GLVertexArray.cpp">
@@ -139,6 +160,9 @@
     <ClCompile Include="src\Tiger\Rendering\Buffer.cpp">
       <Filter>Tiger\Rendering</Filter>
     </ClCompile>
+    <ClCompile Include="src\Tiger\Rendering\GraphicsContext.cpp">
+      <Filter>Tiger\Rendering</Filter>
+    </ClCompile>
     <ClCompile Include="src\Tiger\Rendering\RenderAPI.cpp">
       <Filter>Tiger\Rendering</Filter>
     </ClCompile>
@@ -148,11 +172,17 @@
     <ClCompile Include="src\Tiger\Rendering\Shader.cpp">
       <Filter>Tiger\Rendering</Filter>
     </ClCompile>
+    <ClCompile Include="src\Tiger\Rendering\Texture.cpp">
+      <Filter>Tiger\Rendering</Filter>
+    </ClCompile>
     <ClCompile Include="src\Tiger\Rendering\VertexArray.cpp">
       <Filter>Tiger\Rendering</Filter>
     </ClCompile>
     <ClCompile Include="src\Tiger\Window.cpp">
       <Filter>Tiger</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tiger\stb_image\stb_image.cpp">
+      <Filter>Tiger\stb_image</Filter>
     </ClCompile>
     <ClCompile Include="src\tgpch.cpp" />
   </ItemGroup>

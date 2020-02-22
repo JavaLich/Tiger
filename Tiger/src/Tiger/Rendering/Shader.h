@@ -3,6 +3,8 @@
 #include <fstream>
 #include <sstream>
 
+#include <glm/glm.hpp>
+
 namespace Tiger {
 
 	class Shader {
@@ -39,6 +41,10 @@ namespace Tiger {
 		virtual void compile(std::vector<ShaderStage> shaders) = 0;
 		virtual void bind() = 0;
 		virtual void unbind() = 0;
+
+		virtual void setVec4(std::string location, glm::vec4 value) const = 0;
+		virtual void setInt(std::string location, int value) const = 0;
+		virtual void setVec2(std::string location, glm::vec2 value) const = 0;
 
 		static Ref<Shader> create(std::initializer_list<ShaderStage> list);	
 	};
