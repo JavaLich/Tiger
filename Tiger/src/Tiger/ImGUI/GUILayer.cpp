@@ -79,7 +79,6 @@ namespace Tiger {
 
 	void GUILayer::onDebugGUIRender()
 	{
-		ImGui::ShowDemoWindow();
 	}
 
 	void GUILayer::startRender()

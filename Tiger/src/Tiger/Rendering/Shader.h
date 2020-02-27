@@ -45,6 +45,7 @@ namespace Tiger {
 		virtual void setVec4(std::string location, glm::vec4 value) const = 0;
 		virtual void setInt(std::string location, int value) const = 0;
 		virtual void setVec2(std::string location, glm::vec2 value) const = 0;
+		virtual void setMat4(std::string location, glm::mat4 value) const = 0;
 
 		static Ref<Shader> create(std::initializer_list<ShaderStage> list);	
 	};

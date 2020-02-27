@@ -96,4 +96,12 @@ namespace Tiger {
 		glUniform1i(loc, value);
 	}
 
+	void GLShader::setMat4(std::string location, glm::mat4 value) const
+	{
+		uint32_t loc = glGetUniformLocation(id, location.c_str());
+		if (loc == -1)
+			TG_ERROR("Couldn't find uniform location: {0}", location);
+		glUniformMatrix4fv(loc, 1, GL_FALSE, glm::value_ptr(value));
+	}
+
 }

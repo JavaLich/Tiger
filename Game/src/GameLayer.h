@@ -13,9 +13,5 @@ public:
 	virtual void onUpdate() override;
 	virtual void onEvent(Tiger::Event& event) override;
 
-	virtual void onDebugGUIRender() override;
-private:
-	Tiger::Ref<Tiger::VertexArray> vao;
-	Tiger::Ref<Tiger::Shader> shader;
-	Tiger::Ref<Tiger::Texture> texture;
+	virtual void onDebugGUIRender() override;	
 };
